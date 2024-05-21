@@ -55,8 +55,14 @@ function ToggleComplete(id) {
     console.log(taskList);
 }
 
-function deleteTask(){
-    console.log("삭제");
+function deleteTask(id) { 
+    for(let i=0; i<taskList.length; i++) {
+        if(taskList[i].id == id) {
+            taskList.splice(i, 1);
+            break;
+        }
+    }
+    render();
 }
 
 function randomIDGenerate(){
